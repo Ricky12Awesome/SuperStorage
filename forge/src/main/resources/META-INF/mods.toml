@@ -1,33 +1,33 @@
 modLoader = "javafml"
 loaderVersion = "[40,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
-modId = "examplemod"
+modId = "super_storage"
 version = "${version}"
-displayName = "Example Mod"
-authors = "Me!"
+displayName = "Super Storage"
+authors = "Ricky12Awesome"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+One giant inventory to store items
 '''
 #logoFile = ""
 
-[[dependencies.examplemod]]
+[[dependencies.super_storage]]
 modId = "forge"
 mandatory = true
 versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.super_storage]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.super_storage]]
 modId = "architectury"
 mandatory = true
 versionRange = "[4.2.50,)"

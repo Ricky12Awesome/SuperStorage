@@ -1,35 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "super_storage",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Super Storage",
+  "description": "One giant inventory to store items",
   "authors": [
-    "Me!"
+    "Ricky12Awesome"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-  "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT",
+  "icon": "assets/super_storage/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       {
         "adapter": "kotlin",
-        "value": "net.examplemod.fabric.ExampleModFabric"
+        "value": "dev.ricky12awesome.mod.superstorage.fabric.SuperStorageFabric"
       }
     ]
   },
-  "mixins": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
-  ],
+  "mixins": [],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.18.2",
     "architectury": ">=4.2.50",
-    "fabric-language-kotlin": ">=1.8.0+kotlin.1.7.0"
+    "fabric-language-kotlin": ">=1.8.2+kotlin.1.7.10"
   }
 }

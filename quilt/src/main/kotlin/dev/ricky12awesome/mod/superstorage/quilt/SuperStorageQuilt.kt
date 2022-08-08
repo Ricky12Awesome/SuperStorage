@@ -1,11 +1,11 @@
-package net.examplemod.quilt
+package dev.ricky12awesome.mod.superstorage.quilt
 
-import net.examplemod.ExampleMod.init
+import dev.ricky12awesome.mod.superstorage.SuperStorage.init
 import org.quiltmc.loader.api.ModContainer
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer
 
 @Suppress("unused")
-class ExampleModQuilt : ModInitializer {
+class SuperStorageQuilt : ModInitializer {
   override fun onInitialize(mod: ModContainer) {
     init()
   }
