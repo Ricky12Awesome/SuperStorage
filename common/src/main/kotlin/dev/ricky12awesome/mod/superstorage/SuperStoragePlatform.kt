@@ -1,10 +1,10 @@
-package net.examplemod
+package dev.ricky12awesome.mod.superstorage
 
 import dev.architectury.injectables.annotations.ExpectPlatform
 import dev.architectury.platform.Platform
 import java.nio.file.Path
 
-object ExampleExpectPlatform {
+object SuperStoragePlatform {
   /**
    * We can use [Platform.getConfigFolder] but this is just an example of [ExpectPlatform].
    *

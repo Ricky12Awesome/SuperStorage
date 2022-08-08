@@ -21,5 +21,5 @@ include("fabric")
 include("quilt")
 include("forge")
 
-rootProject.name = "architectury-example-mod"
+rootProject.name = "SuperStorage"
 

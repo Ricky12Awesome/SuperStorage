@@ -1,18 +1,18 @@
-package net.examplemod.forge
+package dev.ricky12awesome.mod.superstorage.forge
 
 import dev.architectury.platform.forge.EventBuses
-import net.examplemod.ExampleMod
-import net.examplemod.ExampleMod.init
-import net.examplemod.forge.datagen.ChineseProvider
+import dev.ricky12awesome.mod.superstorage.SuperStorage.init
+import dev.ricky12awesome.mod.superstorage.MOD_ID
+import dev.ricky12awesome.mod.superstorage.forge.datagen.ChineseProvider
 import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 
-@Mod(ExampleMod.MOD_ID)
-class ExampleModForge {
+@Mod(MOD_ID)
+class SuperStorageForge {
   init {
     // Submit our event bus to let architectury register our content on the right time
-    EventBuses.registerModEventBus(ExampleMod.MOD_ID, FMLJavaModLoadingContext.get().modEventBus)
+    EventBuses.registerModEventBus(MOD_ID, FMLJavaModLoadingContext.get().modEventBus)
     FMLJavaModLoadingContext.get().modEventBus.addListener(this::onGatherData)
     init()
   }
