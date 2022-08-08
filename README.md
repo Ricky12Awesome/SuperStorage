@@ -33,10 +33,10 @@ on the network
   - view all connected modules
   - can upgrade modules within its gui
   - multi-block size upgrades (`size - 1 * module_size`, `-1` for the controller, `module_size` defaults to 8)
-    - no upgrades - 2^2 (56 unique items)
+    - no upgrades - 2^3 (56 unique items)
     - Tier 1 (Diamond)- 3^3 (208 unique items)
-    - Tier 2 (Emerald) - 4^4 (504 unique items)
-    - Tier 3 (Netherrite) - 5^5 (992 unique items)
+    - Tier 2 (Emerald) - 4^3 (504 unique items)
+    - Tier 3 (Netherrite) - 5^3 (992 unique items)
 
 - Items will NOT overflow to the next module,
   if a unique item reaches its limit
