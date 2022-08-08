@@ -1,9 +1,10 @@
-package dev.ricky12awesome.mod.superstorage.blocks
+package dev.ricky12awesome.mod.superstorage.block
 
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import dev.ricky12awesome.mod.superstorage.MOD_ID
-import dev.ricky12awesome.mod.superstorage.tabs.Tabs
+import dev.ricky12awesome.mod.superstorage.block.entity.BlockEntities
+import dev.ricky12awesome.mod.superstorage.tab.Tabs
 import net.minecraft.core.Registry
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
@@ -18,16 +19,15 @@ object Blocks {
   val BLOCKS: DeferredRegister<Block> = DeferredRegister.create(MOD_ID, Registry.BLOCK_REGISTRY)
   val BLOCK_ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
 
-  val EXAMPLE_BLOCK: RegistrySupplier<Block> = BLOCKS.register("example_block") {
-    Block(BlockBehaviour.Properties.of(Material.METAL))
-  }
+  val CONTROLLER_BLOCK: RegistrySupplier<ControllerBlock> = BLOCKS.register("controller", ::ControllerBlock)
 
-  val EXAMPLE_BLOCK_ITEM: RegistrySupplier<Item> = BLOCK_ITEMS.register("example_block") {
-    BlockItem(EXAMPLE_BLOCK.get(), Item.Properties().tab(TAB))
+  val CONTROLLER_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("controller") {
+    BlockItem(CONTROLLER_BLOCK.get(), Item.Properties().tab(TAB))
   }
 
   fun register() {
     BLOCKS.register()
     BLOCK_ITEMS.register()
+    BlockEntities.register()
   }
 }

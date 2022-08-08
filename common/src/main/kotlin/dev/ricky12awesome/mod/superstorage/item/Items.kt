@@ -1,9 +1,9 @@
-package dev.ricky12awesome.mod.superstorage.items
+package dev.ricky12awesome.mod.superstorage.item
 
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import dev.ricky12awesome.mod.superstorage.MOD_ID
-import dev.ricky12awesome.mod.superstorage.tabs.Tabs
+import dev.ricky12awesome.mod.superstorage.tab.Tabs
 import net.minecraft.core.Registry
 import net.minecraft.world.item.Item
 
