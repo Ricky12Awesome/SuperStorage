@@ -1,4 +1,5 @@
 {
   "item.super_storage.example_item": "Example Item",
-  "block.super_storage.controller": "Controller"
+  "block.super_storage.controller": "Controller",
+  "block.super_storage.module": "Module"
 }

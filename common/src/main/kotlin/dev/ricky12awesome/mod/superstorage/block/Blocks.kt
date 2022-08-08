@@ -20,9 +20,13 @@ object Blocks {
   val BLOCK_ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
 
   val CONTROLLER_BLOCK: RegistrySupplier<ControllerBlock> = BLOCKS.register("controller", ::ControllerBlock)
-
   val CONTROLLER_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("controller") {
     BlockItem(CONTROLLER_BLOCK.get(), Item.Properties().tab(TAB))
+  }
+
+  val MODULE_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module", ::ModuleBlock)
+  val MODULE_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module") {
+    BlockItem(MODULE_BLOCK.get(), Item.Properties().tab(TAB))
   }
 
   fun register() {

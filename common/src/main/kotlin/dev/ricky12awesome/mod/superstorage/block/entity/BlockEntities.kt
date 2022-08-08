@@ -21,6 +21,15 @@ object BlockEntities {
       ).build(EmptyPart())
     }
 
+  val MODULE_BLOCK_ENTITY: RegistrySupplier<BlockEntityType<*>> =
+    BLOCK_ENTITIES.register("module") {
+      BlockEntityType.Builder.of(
+        BlockEntityType.BlockEntitySupplier(::ModuleBlockEntity),
+        Blocks.MODULE_BLOCK.get()
+      ).build(EmptyPart())
+    }
+
+
   fun register() {
     BLOCK_ENTITIES.register()
   }
