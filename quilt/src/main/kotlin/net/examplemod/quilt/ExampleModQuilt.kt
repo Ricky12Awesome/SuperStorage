@@ -6,7 +6,7 @@ import org.quiltmc.qsl.base.api.entrypoint.ModInitializer
 
 @Suppress("unused")
 class ExampleModQuilt : ModInitializer {
-    override fun onInitialize(mod: ModContainer) {
-        init()
-    }
+  override fun onInitialize(mod: ModContainer) {
+    init()
+  }
 }

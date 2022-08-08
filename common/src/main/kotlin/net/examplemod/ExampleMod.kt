@@ -15,20 +15,21 @@ import com.mojang.logging.LogUtils.getLogger
 import org.slf4j.Logger
 
 object ExampleMod {
-    const val MOD_ID = "examplemod"
-    val logger: Logger = getLogger()
+  const val MOD_ID = "examplemod"
+  val logger: Logger = getLogger()
 
-    // We can use this if we don't want to use DeferredRegister
-    @Suppress("unused")
-    val REGISTRIES: Supplier<Registries> = Suppliers.memoize { Registries.get(MOD_ID) }
+  // We can use this if we don't want to use DeferredRegister
+  @Suppress("unused")
+  val REGISTRIES: Supplier<Registries> = Suppliers.memoize { Registries.get(MOD_ID) }
 
-    // Registering a new creative tab
-    val EXAMPLE_TAB: CreativeModeTab = CreativeTabRegistry.create(ResourceLocation(MOD_ID, "example_tab")) { ItemStack(EXAMPLE_ITEM.get()) }
-    val ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
-    val EXAMPLE_ITEM: RegistrySupplier<Item> = ITEMS.register("example_item") { Item(Item.Properties().tab(EXAMPLE_TAB)) }
+  // Registering a new creative tab
+  val EXAMPLE_TAB: CreativeModeTab =
+    CreativeTabRegistry.create(ResourceLocation(MOD_ID, "example_tab")) { ItemStack(EXAMPLE_ITEM.get()) }
+  val ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
+  val EXAMPLE_ITEM: RegistrySupplier<Item> = ITEMS.register("example_item") { Item(Item.Properties().tab(EXAMPLE_TAB)) }
 
-    fun init() {
-        ITEMS.register()
-        println(ExampleExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString())
-    }
+  fun init() {
+    ITEMS.register()
+    println(ExampleExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString())
+  }
 }

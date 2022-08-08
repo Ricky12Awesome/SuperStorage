@@ -6,9 +6,9 @@ import net.examplemod.ExampleExpectPlatform
 
 @Suppress("unused")
 object ExampleExpectPlatformImpl {
-    /**
-     * This is our actual method to [ExampleExpectPlatform.getConfigDirectory].
-     */
-    @JvmStatic
-    fun getConfigDirectory(): Path = FMLPaths.CONFIGDIR.get()
+  /**
+   * This is our actual method to [ExampleExpectPlatform.getConfigDirectory].
+   */
+  @JvmStatic
+  fun getConfigDirectory(): Path = FMLPaths.CONFIGDIR.get()
 }

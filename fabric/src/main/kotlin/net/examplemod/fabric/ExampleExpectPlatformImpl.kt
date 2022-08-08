@@ -5,9 +5,9 @@ import java.nio.file.Path
 import net.examplemod.ExampleExpectPlatform
 
 object ExampleExpectPlatformImpl {
-    /**
-     * This is our actual method to [ExampleExpectPlatform.getConfigDirectory].
-     */
-    @JvmStatic
-    fun getConfigDirectory(): Path = FabricLoader.getInstance().configDir
+  /**
+   * This is our actual method to [ExampleExpectPlatform.getConfigDirectory].
+   */
+  @JvmStatic
+  fun getConfigDirectory(): Path = FabricLoader.getInstance().configDir
 }
