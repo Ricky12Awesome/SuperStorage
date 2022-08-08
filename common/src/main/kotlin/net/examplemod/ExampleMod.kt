@@ -12,6 +12,11 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import java.util.function.Supplier
 import com.mojang.logging.LogUtils.getLogger
+import net.minecraft.world.item.BlockItem
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.state.BlockBehaviour
+import net.minecraft.world.level.material.Material
+import net.minecraft.world.level.material.MaterialColor
 import org.slf4j.Logger
 
 object ExampleMod {
@@ -23,13 +28,30 @@ object ExampleMod {
   val REGISTRIES: Supplier<Registries> = Suppliers.memoize { Registries.get(MOD_ID) }
 
   // Registering a new creative tab
-  val EXAMPLE_TAB: CreativeModeTab =
+  private val EXAMPLE_TAB: CreativeModeTab =
     CreativeTabRegistry.create(ResourceLocation(MOD_ID, "example_tab")) { ItemStack(EXAMPLE_ITEM.get()) }
-  val ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
-  val EXAMPLE_ITEM: RegistrySupplier<Item> = ITEMS.register("example_item") { Item(Item.Properties().tab(EXAMPLE_TAB)) }
+  private val ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
+  private val BLOCKS: DeferredRegister<Block> = DeferredRegister.create(MOD_ID, Registry.BLOCK_REGISTRY)
+  private val BLOCK_ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
+
+  private val EXAMPLE_ITEM: RegistrySupplier<Item> = ITEMS.register("example_item") {
+    Item(Item.Properties().tab(EXAMPLE_TAB))
+  }
+
+  private val EXAMPLE_BLOCK: RegistrySupplier<Block> = BLOCKS.register("example_block") {
+    Block(BlockBehaviour.Properties.of(Material.METAL))
+  }
+
+  private val EXAMPLE_BLOCK_ITEM: RegistrySupplier<Item> = BLOCK_ITEMS.register("example_block") {
+    BlockItem(EXAMPLE_BLOCK.get(), Item.Properties().tab(EXAMPLE_TAB))
+  }
 
   fun init() {
     ITEMS.register()
+    BLOCKS.register()
+    BLOCK_ITEMS.register()
+
     println(ExampleExpectPlatform.getConfigDirectory().toAbsolutePath().normalize().toString())
   }
 }
+
