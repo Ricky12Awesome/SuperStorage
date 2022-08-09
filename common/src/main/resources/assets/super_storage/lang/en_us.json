@@ -1,5 +1,9 @@
 {
   "item.super_storage.example_item": "Example Item",
   "block.super_storage.controller": "Controller",
-  "block.super_storage.module": "Module"
+  "block.super_storage.module_1": "Iron Module",
+  "block.super_storage.module_2": "Gold Module",
+  "block.super_storage.module_3": "Diamond Module",
+  "block.super_storage.module_4": "Emerald Module",
+  "block.super_storage.module_5": "Netherite Module"
 }

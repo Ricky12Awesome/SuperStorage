@@ -9,8 +9,6 @@ import net.minecraft.core.Registry
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.state.BlockBehaviour
-import net.minecraft.world.level.material.Material
 
 @Suppress("MemberVisibilityCanBePrivate")
 object Blocks {
@@ -24,9 +22,44 @@ object Blocks {
     BlockItem(CONTROLLER_BLOCK.get(), Item.Properties().tab(TAB))
   }
 
-  val MODULE_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module", ::ModuleBlock)
-  val MODULE_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module") {
-    BlockItem(MODULE_BLOCK.get(), Item.Properties().tab(TAB))
+  val MODULE_1_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module_1") {
+    ModuleBlock(ModuleBlock.TierState.TIER_1)
+  }
+
+  val MODULE_1_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module_1") {
+    BlockItem(MODULE_1_BLOCK.get(), Item.Properties().tab(TAB))
+  }
+
+  val MODULE_2_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module_2") {
+    ModuleBlock(ModuleBlock.TierState.TIER_2)
+  }
+
+  val MODULE_2_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module_2") {
+    BlockItem(MODULE_2_BLOCK.get(), Item.Properties().tab(TAB))
+  }
+
+  val MODULE_3_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module_3") {
+    ModuleBlock(ModuleBlock.TierState.TIER_3)
+  }
+
+  val MODULE_3_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module_3") {
+    BlockItem(MODULE_3_BLOCK.get(), Item.Properties().tab(TAB))
+  }
+
+  val MODULE_4_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module_4") {
+    ModuleBlock(ModuleBlock.TierState.TIER_4)
+  }
+
+  val MODULE_4_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module_4") {
+    BlockItem(MODULE_4_BLOCK.get(), Item.Properties().tab(TAB))
+  }
+
+  val MODULE_5_BLOCK: RegistrySupplier<ModuleBlock> = BLOCKS.register("module_5") {
+    ModuleBlock(ModuleBlock.TierState.TIER_5)
+  }
+
+  val MODULE_5_BLOCK_ITEM: RegistrySupplier<BlockItem> = BLOCK_ITEMS.register("module_5") {
+    BlockItem(MODULE_5_BLOCK.get(), Item.Properties().tab(TAB))
   }
 
   fun register() {
