@@ -14,13 +14,12 @@ class ModuleMenuScreen(
   inventory: Inventory,
   name: Component
 ) : AbstractContainerScreen<ModuleMenu>(menu, inventory, name) {
-  var containerRows = 1
+  private val containerRows = 1
 
   init {
     passEvents = false
     imageHeight = 114 + containerRows * 18
     inventoryLabelY = imageHeight - 94
-
   }
 
   override fun render(poseStack: PoseStack, i: Int, j: Int, f: Float) {
