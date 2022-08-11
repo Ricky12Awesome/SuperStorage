@@ -20,6 +20,7 @@ class ModuleBlockItem(block: ModuleBlock) : BlockItem(block, Properties().tab(Bl
     // TODO: get values from config
     val slots = 8
     val times = when (tier) {
+      ModuleBlock.Tier.TIER_0 -> 0
       ModuleBlock.Tier.TIER_1 -> 8
       ModuleBlock.Tier.TIER_2 -> 16
       ModuleBlock.Tier.TIER_3 -> 32

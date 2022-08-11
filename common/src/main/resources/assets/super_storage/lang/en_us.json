@@ -5,6 +5,7 @@
   "block.super_storage.controller_1": "Storage Controller",
   "block.super_storage.controller_2": "Storage Controller",
   "block.super_storage.controller_3": "Storage Controller",
+  "block.super_storage.module_0": "Unknown Storage Module",
   "block.super_storage.module_1": "Iron Storage Module",
   "block.super_storage.module_2": "Gold Storage Module",
   "block.super_storage.module_3": "Diamond Storage Module",

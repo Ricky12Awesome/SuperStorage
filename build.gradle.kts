@@ -62,5 +62,6 @@ allprojects {
 
   tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "17"
+    kotlinOptions.freeCompilerArgs += "-Xjvm-default=all"
   }
 }
