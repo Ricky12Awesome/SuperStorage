@@ -8,13 +8,7 @@ import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 
 object Tabs {
-  val EXAMPLE_TAB: CreativeModeTab =
-    CreativeTabRegistry.create(
-      ResourceLocation(
-        MOD_ID,
-        "example_tab"
-      )
-    ) {
-      ItemStack(Items.EXAMPLE_ITEM.get())
-    }
+  val TAB: CreativeModeTab = CreativeTabRegistry.create(ResourceLocation(MOD_ID, "tab")) {
+    ItemStack(Items.EXAMPLE_ITEM.get())
+  }
 }

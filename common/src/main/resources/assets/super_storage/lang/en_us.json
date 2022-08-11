@@ -1,9 +1,15 @@
 {
   "item.super_storage.example_item": "Example Item",
-  "block.super_storage.controller": "Controller",
-  "block.super_storage.module_1": "Iron Module",
-  "block.super_storage.module_2": "Gold Module",
-  "block.super_storage.module_3": "Diamond Module",
-  "block.super_storage.module_4": "Emerald Module",
-  "block.super_storage.module_5": "Netherite Module"
+  "itemGroup.super_storage.tab": "Super Storage",
+  "block.super_storage.controller": "Storage Controller",
+  "block.super_storage.controller_1": "Storage Controller",
+  "block.super_storage.controller_2": "Storage Controller",
+  "block.super_storage.controller_3": "Storage Controller",
+  "block.super_storage.module_1": "Iron Storage Module",
+  "block.super_storage.module_2": "Gold Storage Module",
+  "block.super_storage.module_3": "Diamond Storage Module",
+  "block.super_storage.module_4": "Emerald Storage Module",
+  "block.super_storage.module_5": "Netherite Storage Module",
+  "item.super_storage.module.description.sm": "Stack Multiplier",
+  "item.super_storage.module.description.slots": "Slots"
 }

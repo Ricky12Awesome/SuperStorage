@@ -12,7 +12,7 @@ object Items {
   val ITEMS: DeferredRegister<Item> = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY)
 
   val EXAMPLE_ITEM: RegistrySupplier<Item> = ITEMS.register("example_item") {
-    Item(Item.Properties().tab(Tabs.EXAMPLE_TAB))
+    Item(Item.Properties().tab(Tabs.TAB))
   }
 
   fun register() {
