@@ -2,11 +2,15 @@ package dev.ricky12awesome.mod.superstorage.container
 
 import dev.ricky12awesome.mod.superstorage.block.ModuleBlock
 import dev.ricky12awesome.mod.superstorage.menu.ModuleMenu
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
+import net.minecraft.core.Direction
 import net.minecraft.core.NonNullList
 import net.minecraft.network.chat.Component
 import net.minecraft.world.Container
 import net.minecraft.world.ContainerHelper
 import net.minecraft.world.MenuProvider
+import net.minecraft.world.WorldlyContainer
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -23,7 +27,7 @@ interface ModuleContainer : Container, MenuProvider {
   fun getMaxStackSize(base: Int) = base * tier.stackMultiplier
   fun getMaxStackSize(item: ItemStack) = getMaxStackSize(item.maxStackSize) * tier.stackMultiplier
 
-  override fun getMaxStackSize(): Int {2
+  override fun getMaxStackSize(): Int {
     return getMaxStackSize(super.getMaxStackSize())
   }
 
@@ -51,6 +55,10 @@ interface ModuleContainer : Container, MenuProvider {
     if (item.count > max) item.count = max
   }
 
+  fun getItemCount(slot: Int): Int {
+    return getItem(slot).count
+  }
+
   override fun clearContent() {
     items.clear()
   }
@@ -74,7 +82,17 @@ interface ModuleContainer : Container, MenuProvider {
   companion object {
     private class EmptyModuleContainer : ModuleContainer {
       override val items: NonNullList<ItemStack> = NonNullList.withSize(8, ItemStack.EMPTY)
-      override val tier: ModuleBlock.Tier = ModuleBlock.Tier.TIER_1
+      override val tier: ModuleBlock.Tier = ModuleBlock.Tier.TIER_5
+
+      override fun getItem(slot: Int): ItemStack {
+        val item = super.getItem(slot).copy()
+        item.count = 1
+        return item
+      }
+
+      override fun getItemCount(slot: Int): Int {
+        return super.getItem(slot).count
+      }
 
       override fun setChanged() {}
     }

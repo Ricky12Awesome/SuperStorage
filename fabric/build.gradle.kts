@@ -32,7 +32,7 @@ dependencies {
 
   common(project(":common", configuration = "namedElements")) { isTransitive = false }
   shadowCommon(project(":common", configuration = "transformProductionFabric")) { isTransitive = false }
-  modImplementation(group = "net.fabricmc", name = "fabric-language-kotlin", version = "1.8.0+kotlin.1.7.0")
+  modImplementation(group = "net.fabricmc", name = "fabric-language-kotlin", version = "1.8.2+kotlin.1.7.10")
 }
 
 val javaComponent = components.getByName<AdhocComponentWithVariants>("java")

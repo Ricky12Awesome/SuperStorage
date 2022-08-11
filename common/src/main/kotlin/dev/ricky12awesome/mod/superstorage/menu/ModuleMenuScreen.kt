@@ -2,12 +2,13 @@ package dev.ricky12awesome.mod.superstorage.menu
 
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
-import dev.architectury.registry.menu.MenuRegistry
+import dev.ricky12awesome.mod.superstorage.container.ModuleContainer
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 import net.minecraft.client.renderer.GameRenderer
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.player.Inventory
+import net.minecraft.world.item.ItemStack
 
 class ModuleMenuScreen(
   menu: ModuleMenu,
@@ -26,6 +27,18 @@ class ModuleMenuScreen(
     this.renderBackground(poseStack)
     super.render(poseStack, i, j, f)
     this.renderTooltip(poseStack, i, j)
+  }
+
+  override fun getTooltipFromItem(itemStack: ItemStack): MutableList<Component> {
+    val lines = super.getTooltipFromItem(itemStack)
+    val container = hoveredSlot?.container
+
+    if (container is ModuleContainer) {
+      val slot = hoveredSlot?.index ?: 0
+      val count = container.getItemCount(slot)
+      lines.add(1, Component.literal("Items: $count"))
+    }
+    return lines
   }
 
   override fun renderBg(poseStack: PoseStack, f: Float, i: Int, j: Int) {
